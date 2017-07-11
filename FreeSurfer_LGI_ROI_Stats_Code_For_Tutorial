@@ -1,0 +1,6 @@
+ 
+ export SUBJECTS_DIR=/home/ddsteph1/Documents/FS_LGI
+ 
+ SUBJ_ARRAY=`find * -maxdepth 0 -type d -name "SL*"`
+ 
+ for i in $SUBJ_ARRAY; do mri_segstats --annot $i lh aparc --i $SUBJECTS_DIR/$i/surf/lh.pial_lgi --sum lh.aparc.pial_lgi.stats; mri_segstats --annot $i rh aparc --i $SUBJECTS_DIR/$i/surf/rh.pial_lgi --sum rh.aparc.pial_lgi.stats;done &>> FreeSurfer_LGI_ROI_Log.txt
